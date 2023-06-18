@@ -19,6 +19,7 @@ using f80 = long double;
 // https://github.com/meooow25/carrot/blob/master/carrot/src/background/predict.js
 
 const i32 INIT_RATING = 1400;
+const i32 MIN_RATING = -500, MAX_RATING = 6000;
 
 struct Contestant {
   std::string name{};
@@ -45,7 +46,19 @@ bool sort_by_original_rank(const Contestant &l, const Contestant &r) {
   return u32(l.original_rank) < u32(r.original_rank);
 }
 
-f80 win_p(f80 ri, f80 rj) { return 1 / (1 + std::pow(10, (rj - ri) / 400)); }
+std::vector<f80> win_p_v;
+
+f80 win_p(i32 dif) { return 1 / (1 + std::pow(10, f80(dif) / 400)); }
+
+void pre_calc() {
+  const i32 n = MAX_RATING * 2;
+  win_p_v.resize(n);
+  for (i32 i = 0; i < n; ++i) {
+    win_p_v[i] = win_p(i - MAX_RATING);
+  }
+}
+
+f80 win_p(i32 ri, i32 rj) { return win_p_v[rj - ri + MAX_RATING]; }
 
 struct Calculator {
   std::map<std::string, i32> old_rating;
@@ -252,7 +265,7 @@ void Calculator::calcPerfs() {
     if (ci.rank == 1) {
       ci.performance = -1;
     } else {
-      i32 L = -500, R = 6000;
+      i32 L = MIN_RATING, R = MAX_RATING;
       while (R - L > 1) {
         i32 M = (L + R) / 2;
         auto cd = calcDelta(ci, M);
@@ -270,6 +283,8 @@ i32 main(i32 argv, u8 *args[]) {
               << std::endl;
     std::exit(0);
   }
+  pre_calc();
+
   auto &past_ratingpath = args[1];
   auto &rank_path = args[2];
   auto &output_path = args[3];
