@@ -85,11 +85,11 @@ void Calculator::read_past_rating(const std::string &path) {
   rating_file >> number;
   std::cerr << "reading " << number << " logs." << std::endl;
 
-  // rank rating perf name
+  // rank rating delta perf name
   for (i32 i = 1; i <= number; ++i) {
     std::string name;
     i32 rating, _;
-    rating_file >> _ >> rating >> _ >> name;
+    rating_file >> _ >> rating >> _ >> _ >> name;
     if (old_rating.count(name)) {
       std::cerr << name << ' ' << rating << std::endl;
       std::cerr << "[error]: Contestant '" << name << "' apperance twice."
@@ -140,7 +140,7 @@ void Calculator::write_result(const std::string &path) {
   std::vector<Contestant> after = contestant;
   for (auto &ci : after) {
     in_contest[ci.name] = true;
-    ci.rating += ci.delta + adjust;
+    ci.rating += ci.delta;
   }
 
   for (const auto &[name, rating] : old_rating) {
@@ -161,10 +161,10 @@ void Calculator::write_result(const std::string &path) {
 
   output << after.size() << std::endl;
 
-  // rank rating perf name
+  // rank rating delta perf name
   for (const auto &ci : after) {
-    output << ci.rank << '\t' << ci.rating << '\t' << ci.performance << '\t'
-           << ci.name << std::endl;
+    output << ci.rank << '\t' << ci.rating << '\t' << ci.delta << '\t'
+           << ci.performance << '\t' << ci.name << std::endl;
   }
 }
 
@@ -227,24 +227,24 @@ void Calculator::adjustDeltas() {
     }
     i32 inc = std::round(-dsum / n) - 1;
     adjust = inc;
-    // for (auto &ci : contestant) {
-    //   ci.delta += inc;
-    // }
+    for (auto &ci : contestant) {
+      ci.delta += inc;
+    }
     std::cout << "[info] inc1 = " << inc << std::endl;
   }
-  // {
-  //   i32 zeroSumCount = std::min<i32>(4 * std::sqrt(n), n);
-  //   f80 dsum = 0;
-  //   for (i32 i = 0; i < zeroSumCount; ++i)
-  //     dsum += contestant[i].delta;
-  //   i32 inc = std::round(-dsum / n);
-  //   inc = std::min(std::max(inc, 0), -10);
-  //   adjust += inc;
-  //   for (auto &ci : contestant) {
-  //     ci.delta += inc;
-  //   }
-  //   std::cout << "[info] inc2 = " << inc << std::endl;
-  // }
+  {
+    i32 zeroSumCount = std::min<i32>(4 * std::sqrt(n), n);
+    f80 dsum = 0;
+    for (i32 i = 0; i < zeroSumCount; ++i)
+      dsum += contestant[i].delta;
+    i32 inc = std::round(-dsum / n);
+    inc = std::min(std::max(inc, 0), -10);
+    adjust += inc;
+    for (auto &ci : contestant) {
+      ci.delta += inc;
+    }
+    std::cout << "[info] inc2 = " << inc << std::endl;
+  }
 }
 
 void Calculator::calcPerfs() {
