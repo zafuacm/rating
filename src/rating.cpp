@@ -18,7 +18,6 @@ using f80 = long double;
 
 // https://github.com/meooow25/carrot/blob/master/carrot/src/background/predict.js
 
-
 const i32 INIT_RATING = 1400;
 
 struct Contestant {
@@ -121,8 +120,8 @@ void Calculator::read_contestant(const std::string &path) {
     if (old_rating.count(name)) {
       rating = old_rating[name];
     } else {
-      std::cerr << "[warn]: " << name << " not exists, init with " << INIT_RATING << "."
-                << std::endl;
+      std::cerr << "[warn]: " << name << " not exists, init with "
+                << INIT_RATING << "." << std::endl;
       rating = INIT_RATING;
     }
     contestant.emplace_back(name, rating, rank);
@@ -188,11 +187,15 @@ void Calculator::reassignRanks() {
 }
 
 f80 Calculator::getSeed(i32 rating, i32 exclude) {
-  f80 s = -win_p(exclude, rating);
-  for (const auto &ci : contestant) {
-    s += win_p(ci.rating, rating);
+  std::map<i32, f80> map;
+  if (!map.count(rating)) {
+    f80 s = 1;
+    for (const auto &ci : contestant) {
+      s += win_p(ci.rating, rating);
+    }
+    map[rating] = s;
   }
-  return s + 1;
+  return map[rating] - win_p(exclude, rating);
 }
 
 i32 Calculator::calcDelta(Contestant &c, i32 assumedRating) {
@@ -215,11 +218,33 @@ void Calculator::calcDeltas() {
 }
 
 void Calculator::adjustDeltas() {
-  f80 dsum = 0;
-  for (auto &ci : contestant) {
-    dsum += ci.delta;
+  std::sort(contestant.begin(), contestant.end(), sort_by_rating);
+  i32 n = contestant.size();
+  {
+    f80 dsum = 0;
+    for (auto &ci : contestant) {
+      dsum += ci.delta;
+    }
+    i32 inc = std::round(-dsum / n) - 1;
+    adjust = inc;
+    // for (auto &ci : contestant) {
+    //   ci.delta += inc;
+    // }
+    std::cout << "[info] inc1 = " << inc << std::endl;
   }
-  adjust = std::round(-dsum / contestant.size()) - 1;
+  // {
+  //   i32 zeroSumCount = std::min<i32>(4 * std::sqrt(n), n);
+  //   f80 dsum = 0;
+  //   for (i32 i = 0; i < zeroSumCount; ++i)
+  //     dsum += contestant[i].delta;
+  //   i32 inc = std::round(-dsum / n);
+  //   inc = std::min(std::max(inc, 0), -10);
+  //   adjust += inc;
+  //   for (auto &ci : contestant) {
+  //     ci.delta += inc;
+  //   }
+  //   std::cout << "[info] inc2 = " << inc << std::endl;
+  // }
 }
 
 void Calculator::calcPerfs() {
