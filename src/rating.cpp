@@ -98,11 +98,11 @@ void Calculator::read_past_rating(const std::string &path) {
   rating_file >> number;
   std::cerr << "reading " << number << " logs." << std::endl;
 
-  // rank rating delta perf name
+  // old-rating -> new-rating | perf rank name
   for (i32 i = 1; i <= number; ++i) {
-    std::string name;
-    i32 rating, _;
-    rating_file >> _ >> rating >> _ >> _ >> name;
+    std::string name, _;
+    i32 rating;
+    rating_file >> _ >> _ >> rating >> _ >> _ >> _ >> name;
     if (old_rating.count(name)) {
       std::cerr << name << ' ' << rating << std::endl;
       std::cerr << "[error]: Contestant '" << name << "' apperance twice."
@@ -174,10 +174,10 @@ void Calculator::write_result(const std::string &path) {
 
   output << after.size() << std::endl;
 
-  // rank rating delta perf name
+  // old-rating -> new-rating | perf rank name
   for (const auto &ci : after) {
-    output << ci.rank << '\t' << ci.rating << '\t' << ci.delta << '\t'
-           << ci.performance << '\t' << ci.name << std::endl;
+    output << ci.rating - ci.delta << " -> " << ci.rating << "\t|\t"
+           << ci.performance << '\t' << ci.rank << '\t' << ci.name << std::endl;
   }
 }
 
