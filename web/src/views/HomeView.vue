@@ -24,7 +24,9 @@ const columns: TableColumns<any> = [
 			const history = row.history;
 			for (const i in history) {
 				const e = history[i];
-				info += `${e.contestName}, ${e.rank}, ${e.oldRating} -> ${e.newRating}\n`
+				console.log(e.rank, e.rank === 1);
+				const perf =  e.rank === 1 ? "+INF" : String(e.perf)
+				info += `${e.oldRating} -> ${e.newRating}，表现分 ${perf}，排名 ${e.rank}，${e.contestName}。\n`
 			}
 			return h(NLog, { log: `logs:\n${info}` })
 		}
