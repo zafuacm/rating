@@ -3,3 +3,4 @@ build:
 
 run:
    python3 src/format.py
+   cp rating/*.json web/public/
