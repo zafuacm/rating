@@ -68,7 +68,7 @@ watch(() => router.currentRoute.value.params, (toParams, _) => {
 const loadData = (url: string) => {
 	if (url === 'error')
 		return
-	url = `/${url}.json`
+	url = window.location.origin + window.location.pathname + `/${url}.json`
 	fetch(url)
 		.then(res => res.json())
 		.then(data => {
