@@ -24,7 +24,6 @@ const columns: TableColumns<any> = [
 			const history = row.history;
 			for (const i in history) {
 				const e = history[i];
-				console.log(e.rank, e.rank === 1);
 				const perf =  e.rank === 1 ? "+INF" : String(e.perf)
 				info += `${e.oldRating} -> ${e.newRating}，表现分 ${perf}，排名 ${e.rank}，${e.contestName}。\n`
 			}
@@ -101,7 +100,7 @@ onMounted(() => {
 	<div id="home-container">
 		<n-h1> ZAFU ACM 积分榜 </n-h1>
 		<n-p> 积分使用 <n-a href="https://en.wikipedia.org/wiki/Elo_rating_system">Elo Rating System</n-a>，仿照 CodeForces 的
-			Rating 计算方法。详细算法请访问 <n-a href="#"> 项目主页 </n-a>。 </n-p>
+			Rating 计算方法。详细算法请访问 <n-a href="https://github.com/rogeryoungh/rating/settings"> 项目主页 </n-a>。 </n-p>
 
 		<n-h2> 赛季 </n-h2>
 		<n-p> 我们每个学年会重新计分。 </n-p>
