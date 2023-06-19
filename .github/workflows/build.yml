@@ -22,6 +22,7 @@ jobs:
 
       - name: Build
         run: |
+          pip install pyyaml
           just generate
           just web
 
