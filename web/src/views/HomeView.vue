@@ -107,6 +107,9 @@ onMounted(() => {
 		<n-p>
 			<n-ul>
 				<n-li>
+					<n-a @click="router.push('/list/2023-all')">2023 赛季</n-a>。
+				</n-li>
+				<n-li>
 					<n-a @click="router.push('/list/2022-all')">2022 赛季</n-a>。
 				</n-li>
 				<n-li>
