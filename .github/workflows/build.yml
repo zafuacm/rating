@@ -1,4 +1,4 @@
-name: mkdocs generate docs
+name: build
 on:
   push:
     branches:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Deploy docs
+    name: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
@@ -23,10 +23,13 @@ jobs:
         with:
           version: 8
 
-      - name: Build
+      - name: Build Data(JSON)
         run: |
           pip install pyyaml
           just generate
+
+      - name: Build Web
+        run: |
           just web
 
       - name: Deploy
