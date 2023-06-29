@@ -4,9 +4,9 @@
 
 初始分 1400，在前 6 次训练赛中逐步发放。
 
-### 每场分数计算（[Codeforces 博客](https://codeforces.com/blog/entry/20762)）：
-1. 计算选手 $i$ 与 选手 $j$ 相比获胜的概率 $P_{i,j}$，$r_i$ 表示选手 $i$ 的 rating：
+## 每场分数计算（[Codeforces 博客](https://codeforces.com/blog/entry/20762)）：
 
+1. 计算选手 $i$ 与 选手 $j$ 相比获胜的概率 $P_{i,j}$，$r_i$ 表示选手 $i$ 的 rating：
 $$
 P_{i,j} = \frac{1}{1 + 10\frac{r_j-r_i}{400}}\ ,r_i > r_j
 $$
@@ -24,15 +24,16 @@ $$
 4. 用二分法找到一个新 rating 值 $R_i$，用该值算出来的 $seed$ 值等于 $m_i$。计算 $r_i$ 与 $R_i$ 的差值 $d_i$：
 $$
 d_i = \frac{R_i - r_i}{2}
-$$ 
+$$
 
 5. 为防止分数膨胀，引入 $inc$：
 $$
 inc = \rm{min}(\rm{max}(-\frac{\sum^n_1{d_i}}{n}, -10), 0)
 $$
+
 6. 最终选手 $i$ 的 rating = $r_i + d_i + inc$。
 
-### 初始分发放
+## 初始分发放
 
 初始分 1400，在前 6 次训练赛中逐步发放。
 

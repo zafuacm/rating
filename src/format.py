@@ -22,11 +22,29 @@ def adjust(n):
         sum -= array[i]
     return sum
 
+def initContestants(init_path):
+    contestants = {}
+    data = read_file(f"rating/{init_path}").splitlines()
+    if len(data) < 2:
+        return contestants
+
+    for line in data[1::]:
+        line = line.split('\t')
+        print(line)
+        init_rating = int(line[0].split('->')[1])
+        name = line[4]
+        contestants[name] = {
+            "handle": name,
+            "organization": "",
+            "rating": init_rating,
+            "maxRating": init_rating,
+            "history": []
+        }
+    return contestants
 
 def process(list):
     last_path = list['init']
-
-    contestants = {}
+    contestants = initContestants(last_path)
     for c in list['contests']:
         file_name = c['file']
         command = f"./src/rating.out rating/{last_path} contest/{file_name} rating/{file_name}"
@@ -68,27 +86,6 @@ def process(list):
                 display_rating, contestants[name]["maxRating"])
 
             # print(line)
-    if not contestants:
-        data = read_file(f"rating/{last_path}").splitlines()
-        if len(data) > 2:
-            for line in data[1::]:
-                line = line.split('\t')
-                print(line)
-                old_rating = int(line[0].split('->')[0])
-                new_rating = int(line[0].split('->')[1])
-                perf = int(line[2])
-                rank = int(line[3])
-                name = line[4]
-                if rank == -1:
-                    continue
-                if name not in contestants:
-                    contestants[name] = {
-                        "handle": name,
-                        "organization": "",
-                        "rating": new_rating,
-                        "maxRating": new_rating,
-                        "history": []
-                    }
     return contestants
 
 
