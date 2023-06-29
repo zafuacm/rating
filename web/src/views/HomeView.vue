@@ -103,17 +103,17 @@ onMounted(() => {
 			Rating 计算方法。详细算法请访问 <n-a href="https://github.com/rogeryoungh/rating/settings"> 项目主页 </n-a>。 </n-p>
 
 		<n-h2> 赛季 </n-h2>
-		<n-p> 我们每个学年会重新计分。 </n-p>
+		<n-p> 我们会在每年一月份重新计分。 </n-p>
 		<n-p>
 			<n-ul>
 				<n-li>
 					<n-a @click="router.push('/list/2023-all')">2023 赛季</n-a>。
 				</n-li>
 				<n-li>
-					<n-a @click="router.push('/list/2022-all')">2022 赛季</n-a>。
+					<n-a @click="router.push('/list/2022-all')">2022 赛季（非正式）</n-a>。
 				</n-li>
 				<n-li>
-					<n-a @click="router.push('/list/2021-all')">2021 赛季</n-a>。
+					<n-a @click="router.push('/list/2021-all')">2021 赛季（非正式）</n-a>。
 				</n-li>
 			</n-ul>
 		</n-p>
