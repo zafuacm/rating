@@ -21,19 +21,23 @@ def adjust(n):
   return sum
 
 def process(list):
-  last_path = '0000-00-00.txt'
+  last_path = list['init']
   contestants = {}
+  file_list = []
+
+  file_list.append(last_path)
   for c in list['contests']:
     file_name = c['file']
     command = f"./src/rating.out rating/{last_path} contest/{file_name} rating/{file_name}"
     print(f"command = {command}")
     os.system(command)
     last_path = file_name
-    
-    data = read_file(f"rating/{file_name}").splitlines()
+    file_list.append(last_path)
+
+  for i in range(len(file_list)):
+    data = read_file(f"rating/{file_list[i]}").splitlines()
     for line in data[1::]:
       line = line.split('\t')
-      print(line)
       old_rating = int(line[0].split('->')[0])
       new_rating = int(line[0].split('->')[1])
       perf = int(line[2])
@@ -49,15 +53,17 @@ def process(list):
           "maxRating": 0,
           "history": []
         }
-      adjustment = adjust(len(contestants[name]["history"]) + 1)
-      contestants[name]["history"].append({
-        "contestName": c['name'],
-        "oldRating": old_rating,
-        "newRating": new_rating,
-        "perf": perf,
-        "rank": rank,
-        "url": c['url'],
-      })
+      adjustment = adjust(0)
+      if i != 0:
+        adjustment = adjust(len(contestants[name]["history"]) + 1)
+        contestants[name]["history"].append({
+            "contestName": c['name'],
+            "oldRating": old_rating,
+            "newRating": new_rating,
+            "perf": perf,
+            "rank": rank,
+            "url": c['url'],
+        })
       display_rating = new_rating - adjustment
       contestants[name]["rating"] = display_rating
       contestants[name]["maxRating"] = max(display_rating, contestants[name]["maxRating"])

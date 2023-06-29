@@ -1,5 +1,10 @@
+- list: "2023 赛季"
+  file: "2023-all.json"
+  init: "2023init.txt"
+  contests: []
 - list: "2022 赛季"
   file: "2022-all.json"
+  init: "0000-00-00.txt"
   contests:
     - name: "2023寒假个人赛1"
       date: "2022-12-26"
@@ -38,5 +43,6 @@
       file: "2023-05-27.txt"
       url: "#"
 - list: "2021 赛季"
+  init: '0000-00-00.txt'
   file: "2021-all.json"
   contests: []

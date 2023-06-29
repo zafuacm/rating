@@ -1,0 +1,42 @@
+# https://github.com/cpeditor/cpeditor/blob/master/.github/workflows/check_format.yml
+
+name: check data
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: check data
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v3
+
+      - uses: extractions/setup-just@v1
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Build Data(JSON)
+        run: |
+          pip install pyyaml
+          just generate
+
+      - name: Check diff
+        run: git diff --exit-code HEAD
+
+      - name: Create Pull Request
+        if: failure()
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: "style: format codes"
+          title: "style: format codes for ${{ github.actor }} on ${{ github.ref }}"
+          labels: "style"
+          assignees: "${{ github.actor }}"
+          reviewers: "${{ github.actor }}"
+          branch: "auto-pr/check-data/${{ github.ref }}"
