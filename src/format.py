@@ -53,8 +53,9 @@ def process(list):
           "maxRating": 0,
           "history": []
         }
-      adjustment = adjust(len(contestants[name]["history"]))
+      adjustment = adjust(0)
       if i != 0:
+        adjustment = adjust(len(contestants[name]["history"]) + 1)
         contestants[name]["history"].append({
             "contestName": c['name'],
             "oldRating": old_rating,
