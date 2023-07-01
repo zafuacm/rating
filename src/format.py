@@ -25,17 +25,19 @@ def process(list):
   contestants = {}
   file_list = []
 
-  file_list.append(last_path)
+  file_list.append(['init', last_path])
   for c in list['contests']:
     file_name = c['file']
     command = f"./src/rating.out rating/{last_path} contest/{file_name} rating/{file_name}"
     print(f"command = {command}")
     os.system(command)
     last_path = file_name
-    file_list.append(last_path)
+    file_list.append([c, last_path])
 
   for i in range(len(file_list)):
-    data = read_file(f"rating/{file_list[i]}").splitlines()
+    contest = file_list[i][0]
+    file_path = file_list[i][1]
+    data = read_file(f"rating/{file_path}").splitlines()
     for line in data[1::]:
       line = line.split('\t')
       old_rating = int(line[0].split('->')[0])
@@ -57,12 +59,12 @@ def process(list):
       if i != 0:
         adjustment = adjust(len(contestants[name]["history"]) + 1)
         contestants[name]["history"].append({
-            "contestName": c['name'],
+            "contestName": contest['name'],
             "oldRating": old_rating,
             "newRating": new_rating,
             "perf": perf,
             "rank": rank,
-            "url": c['url'],
+            "url": contest['url'],
         })
       display_rating = new_rating - adjustment
       contestants[name]["rating"] = display_rating
