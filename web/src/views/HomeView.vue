@@ -100,7 +100,7 @@ onMounted(() => {
 	<div id="home-container">
 		<n-h1> ZAFU ACM 积分榜 </n-h1>
 		<n-p> 积分使用 <n-a href="https://en.wikipedia.org/wiki/Elo_rating_system">Elo Rating System</n-a>，仿照 CodeForces 的
-			Rating 计算方法。详细算法请访问 <n-a href="https://github.com/rogeryoungh/rating/settings"> 项目主页 </n-a>。 </n-p>
+			Rating 计算方法。详细算法请访问 <n-a href="https://github.com/zafuacm/rating"> 项目主页 </n-a>。 </n-p>
 
 		<n-h2> 赛季 </n-h2>
 		<n-p> 我们会在每年一月份重新计分。 </n-p>
