@@ -1,3 +1,11 @@
+- list: "2024 赛季"
+  init: '0000-00-00.txt'
+  file: "2024-all.json"
+  contests:
+    - name: "2024寒假个人赛1"
+      date: "2024-01-23"
+      file: "2024-01-23.txt"
+      url: "https://vjudge.net/contest/605533"
 - list: "2023 赛季"
   file: "2023-all.json"
   init: "2023init.txt"
