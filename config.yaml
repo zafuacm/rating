@@ -1,3 +1,11 @@
+- list: "2024 暑期组队"
+  init: '0000-00-00.txt'
+  file: "2024-summer.json"
+  contests:
+    - name: "zafu2024暑假个人赛1"
+      date: "2024-07-04"
+      file: "2024-07-04.txt"
+      url: "https://vjudge.net/contest/636999"
 - list: "2024 赛季"
   init: '0000-00-00.txt'
   file: "2024-all.json"
@@ -42,6 +50,10 @@
       date: "2024-03-31"
       file: "2024-03-31.txt"
       url: "https://vjudge.net/contest/619724"
+    - name: "zafu2024暑假个人赛1"
+      date: "2024-07-04"
+      file: "2024-07-04.txt"
+      url: "https://vjudge.net/contest/636999"
 - list: "2023 赛季"
   file: "2023-all.json"
   init: "2023init.txt"
