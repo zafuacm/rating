@@ -28,7 +28,7 @@ def process(list):
   file_list.append(['init', last_path])
   for c in list['contests']:
     file_name = c['file']
-    command = f"./src/rating.out rating/{last_path} contest/{file_name} rating/{file_name}"
+    command = f".\\src\\rating.out rating\\{last_path} contest\\{file_name} rating\\{file_name}"
     print(f"command = {command}")
     os.system(command)
     last_path = file_name
