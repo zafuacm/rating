@@ -10,6 +10,10 @@
       date: "2024-07-05"
       file: "2024-07-05.txt"
       url: "https://vjudge.net/contest/637000"
+    - name: "2024暑期个人赛3"
+      date: "2024-07-07"
+      file: "2024-07-07.txt"
+      url: "https://vjudge.net/contest/637002"
 - list: "2024 赛季"
   init: '0000-00-00.txt'
   file: "2024-all.json"
