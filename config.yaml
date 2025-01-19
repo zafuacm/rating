@@ -10,6 +10,10 @@
       date: "2025-01-16"
       file: "2025-01-16.txt"
       url: "https://vjudge.net/contest/685691"
+    - name: "ZAFU2025寒假个人赛3"
+      date: "2025-01-19"
+      file: "2025-01-19.txt"
+      url: "https://vjudge.net/contest/686494"
 - list: "2024 赛季"
   init: '0000-00-00.txt'
   file: "2024-all.json"
