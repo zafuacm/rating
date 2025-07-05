@@ -107,6 +107,9 @@ onMounted(() => {
 		<n-p>
 			<n-ul>
 				<n-li>
+					<n-a @click="router.push('/list/2025-summer')">2025 暑期组队</n-a>。
+				</n-li>
+				<n-li>
 					<n-a @click="router.push('/list/2025-all')">2025 赛季</n-a>。
 				</n-li>
 				<n-li>
