@@ -1,3 +1,23 @@
+- list: "2025 暑期组队"
+  init: '0000-00-00.txt'
+  file: "2025-summer.json"
+  contests: 
+    - name: "暑假个人赛1"
+      date: "2025-07-01"
+      file: "2025-07-01.txt"
+      url: "https://vjudge.net/contest/726102"  
+    - name: "暑假个人赛2"
+      date: "2025-07-03"
+      file: "2025-07-03.txt"
+      url: "https://vjudge.net/contest/726353" 
+    - name: "暑假个人赛3"
+      date: "2025-07-04"
+      file: "2025-07-04.txt"
+      url: "https://vjudge.net/contest/726929" 
+    - name: "暑假个人赛4"
+      date: "2025-07-05"
+      file: "2025-07-05.txt"
+      url: "https://vjudge.net/contest/727224" 
 - list: "2025 赛季"
   init: '0000-00-00.txt'
   file: "2025-all.json"
