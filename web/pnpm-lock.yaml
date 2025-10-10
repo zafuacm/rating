@@ -13,7 +13,7 @@ dependencies:
     version: registry.npmmirror.com/vfonts@0.0.3
   vue:
     specifier: ^3.5.22
-    version: 3.5.22(typescript@5.4.3)
+    version: 3.5.22(typescript@5.9.3)
   vue-router:
     specifier: ^4.3.0
     version: registry.npmmirror.com/vue-router@4.3.0(vue@3.5.22)
@@ -23,14 +23,14 @@ devDependencies:
     specifier: ^5.0.4
     version: registry.npmmirror.com/@vitejs/plugin-vue@5.0.4(vite@5.2.6)(vue@3.5.22)
   typescript:
-    specifier: ^5.4.3
-    version: registry.npmmirror.com/typescript@5.4.3
+    specifier: ^5.9.3
+    version: 5.9.3
   vite:
     specifier: ^5.2.6
     version: registry.npmmirror.com/vite@5.2.6
   vue-tsc:
     specifier: ^2.0.7
-    version: registry.npmmirror.com/vue-tsc@2.0.7(typescript@5.4.3)
+    version: registry.npmmirror.com/vue-tsc@2.0.7(typescript@5.9.3)
 
 packages:
 
@@ -440,7 +440,7 @@ packages:
     dependencies:
       '@vue/compiler-ssr': 3.5.22
       '@vue/shared': 3.5.22
-      vue: 3.5.22(typescript@5.4.3)
+      vue: 3.5.22(typescript@5.9.3)
 
   /@vue/shared@3.4.21:
     resolution: {integrity: sha512-PuJe7vDIi6VYSinuEbUIQgMIRZGgM8e4R+G+/dQTk0X1NEdvgvvgv7m+rfmDH1gZzyA1OjjoWskvHlfRNfQf3g==}
@@ -496,7 +496,12 @@ packages:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
 
-  /vue@3.5.22(typescript@5.4.3):
+  /typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+  /vue@3.5.22(typescript@5.9.3):
     resolution: {integrity: sha512-toaZjQ3a/G/mYaLSbV+QsQhIdMo9x5rrqIpYRObsJ6T/J+RyCSFwN2LHNVH9v8uIcljDNa3QzPVdv3Y6b9hAJQ==}
     peerDependencies:
       typescript: '*'
@@ -509,7 +514,7 @@ packages:
       '@vue/runtime-dom': 3.5.22
       '@vue/server-renderer': 3.5.22(vue@3.5.22)
       '@vue/shared': 3.5.22
-      typescript: registry.npmmirror.com/typescript@5.4.3
+      typescript: 5.9.3
 
   registry.npmmirror.com/@babel/runtime@7.24.1:
     resolution: {integrity: sha512-+BIznRzyqBf+2wCTxcKE3wDjfGeCoVE61KSHGpkzqrLi8qxqFwBeUFyId2cxkTmm55fzDGnm0+yCxaxygrLUnQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@babel/runtime/-/runtime-7.24.1.tgz}
@@ -539,7 +544,7 @@ packages:
     peerDependencies:
       vue: ^3.0.11
     dependencies:
-      vue: 3.5.22(typescript@5.4.3)
+      vue: 3.5.22(typescript@5.9.3)
     dev: false
 
   registry.npmmirror.com/@emotion/hash@0.8.0:
@@ -591,7 +596,7 @@ packages:
       vue: ^3.2.25
     dependencies:
       vite: registry.npmmirror.com/vite@5.2.6
-      vue: 3.5.22(typescript@5.4.3)
+      vue: 3.5.22(typescript@5.9.3)
     dev: true
 
   registry.npmmirror.com/@volar/language-core@2.1.5:
@@ -634,7 +639,7 @@ packages:
     version: 6.6.1
     dev: false
 
-  registry.npmmirror.com/@vue/language-core@2.0.7(typescript@5.4.3):
+  registry.npmmirror.com/@vue/language-core@2.0.7(typescript@5.9.3):
     resolution: {integrity: sha512-Vh1yZX3XmYjn9yYLkjU8DN6L0ceBtEcapqiyclHne8guG84IaTzqtvizZB1Yfxm3h6m7EIvjerLO5fvOZO6IIQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/language-core/-/language-core-2.0.7.tgz}
     id: registry.npmmirror.com/@vue/language-core/2.0.7
     name: '@vue/language-core'
@@ -651,7 +656,7 @@ packages:
       computeds: registry.npmmirror.com/computeds@0.0.1
       minimatch: registry.npmmirror.com/minimatch@9.0.3
       path-browserify: registry.npmmirror.com/path-browserify@1.0.1
-      typescript: registry.npmmirror.com/typescript@5.4.3
+      typescript: 5.9.3
       vue-template-compiler: registry.npmmirror.com/vue-template-compiler@2.7.16
     dev: true
 
@@ -843,7 +848,7 @@ packages:
       treemate: registry.npmmirror.com/treemate@0.3.11
       vdirs: registry.npmmirror.com/vdirs@0.1.8(vue@3.5.22)
       vooks: registry.npmmirror.com/vooks@0.2.12(vue@3.5.22)
-      vue: 3.5.22(typescript@5.4.3)
+      vue: 3.5.22(typescript@5.9.3)
       vueuc: registry.npmmirror.com/vueuc@0.4.58(vue@3.5.22)
     dev: false
 
@@ -938,13 +943,6 @@ packages:
     version: 0.3.11
     dev: false
 
-  registry.npmmirror.com/typescript@5.4.3:
-    resolution: {integrity: sha512-KrPd3PKaCLr78MalgiwJnA25Nm8HAmdwN3mYUYZgG/wizIo9EainNVQI9/yDavtVFRN2h3k8uf3GLHuhDMgEHg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/typescript/-/typescript-5.4.3.tgz}
-    name: typescript
-    version: 5.4.3
-    engines: {node: '>=14.17'}
-    hasBin: true
-
   registry.npmmirror.com/vdirs@0.1.8(vue@3.5.22):
     resolution: {integrity: sha512-H9V1zGRLQZg9b+GdMk8MXDN2Lva0zx72MPahDKc30v+DtwKjfyOSXWRIX4t2mhDubM1H09gPhWeth/BJWPHGUw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vdirs/-/vdirs-0.1.8.tgz}
     id: registry.npmmirror.com/vdirs/0.1.8
@@ -954,7 +952,7 @@ packages:
       vue: ^3.0.11
     dependencies:
       evtd: registry.npmmirror.com/evtd@0.2.4
-      vue: 3.5.22(typescript@5.4.3)
+      vue: 3.5.22(typescript@5.9.3)
     dev: false
 
   registry.npmmirror.com/vfonts@0.0.3:
@@ -1009,7 +1007,7 @@ packages:
       vue: ^3.0.0
     dependencies:
       evtd: registry.npmmirror.com/evtd@0.2.4
-      vue: 3.5.22(typescript@5.4.3)
+      vue: 3.5.22(typescript@5.9.3)
     dev: false
 
   registry.npmmirror.com/vue-router@4.3.0(vue@3.5.22):
@@ -1021,7 +1019,7 @@ packages:
       vue: ^3.2.0
     dependencies:
       '@vue/devtools-api': registry.npmmirror.com/@vue/devtools-api@6.6.1
-      vue: 3.5.22(typescript@5.4.3)
+      vue: 3.5.22(typescript@5.9.3)
     dev: false
 
   registry.npmmirror.com/vue-template-compiler@2.7.16:
@@ -1033,7 +1031,7 @@ packages:
       he: registry.npmmirror.com/he@1.2.0
     dev: true
 
-  registry.npmmirror.com/vue-tsc@2.0.7(typescript@5.4.3):
+  registry.npmmirror.com/vue-tsc@2.0.7(typescript@5.9.3):
     resolution: {integrity: sha512-LYa0nInkfcDBB7y8jQ9FQ4riJTRNTdh98zK/hzt4gEpBZQmf30dPhP+odzCa+cedGz6B/guvJEd0BavZaRptjg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-tsc/-/vue-tsc-2.0.7.tgz}
     id: registry.npmmirror.com/vue-tsc/2.0.7
     name: vue-tsc
@@ -1043,9 +1041,9 @@ packages:
       typescript: '*'
     dependencies:
       '@volar/typescript': registry.npmmirror.com/@volar/typescript@2.1.5
-      '@vue/language-core': registry.npmmirror.com/@vue/language-core@2.0.7(typescript@5.4.3)
+      '@vue/language-core': registry.npmmirror.com/@vue/language-core@2.0.7(typescript@5.9.3)
       semver: registry.npmmirror.com/semver@7.6.0
-      typescript: registry.npmmirror.com/typescript@5.4.3
+      typescript: 5.9.3
     dev: true
 
   registry.npmmirror.com/vueuc@0.4.58(vue@3.5.22):
@@ -1063,7 +1061,7 @@ packages:
       seemly: registry.npmmirror.com/seemly@0.3.8
       vdirs: registry.npmmirror.com/vdirs@0.1.8(vue@3.5.22)
       vooks: registry.npmmirror.com/vooks@0.2.12(vue@3.5.22)
-      vue: 3.5.22(typescript@5.4.3)
+      vue: 3.5.22(typescript@5.9.3)
     dev: false
 
   registry.npmmirror.com/yallist@4.0.0:
