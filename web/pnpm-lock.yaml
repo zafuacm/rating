@@ -15,8 +15,8 @@ dependencies:
     specifier: ^3.5.22
     version: 3.5.22(typescript@5.9.3)
   vue-router:
-    specifier: ^4.3.0
-    version: registry.npmmirror.com/vue-router@4.3.0(vue@3.5.22)
+    specifier: ^4.5.1
+    version: 4.5.1(vue@3.5.22)
 
 devDependencies:
   '@vitejs/plugin-vue':
@@ -422,6 +422,10 @@ packages:
       '@vue/compiler-dom': 3.5.22
       '@vue/shared': 3.5.22
 
+  /@vue/devtools-api@6.6.4:
+    resolution: {integrity: sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==}
+    dev: false
+
   /@vue/language-core@3.1.1(typescript@5.9.3):
     resolution: {integrity: sha512-qjMY3Q+hUCjdH+jLrQapqgpsJ0rd/2mAY02lZoHG3VFJZZZKLjAlV+Oo9QmWIT4jh8+Rx8RUGUi++d7T9Wb6Mw==}
     peerDependencies:
@@ -544,6 +548,15 @@ packages:
     resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
     dev: true
 
+  /vue-router@4.5.1(vue@3.5.22):
+    resolution: {integrity: sha512-ogAF3P97NPm8fJsE4by9dwSYtDwXIY1nFY9T6DyQnGHd1E2Da94w9JIolpe42LJGIl0DwOHBi8TcRPlPGwbTtw==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.6.4
+      vue: 3.5.22(typescript@5.9.3)
+    dev: false
+
   /vue-tsc@3.1.1(typescript@5.9.3):
     resolution: {integrity: sha512-fyixKxFniOVgn+L/4+g8zCG6dflLLt01Agz9jl3TO45Bgk87NZJRmJVPsiK+ouq3LB91jJCbOV+pDkzYTxbI7A==}
     hasBin: true
@@ -652,12 +665,6 @@ packages:
       vite: registry.npmmirror.com/vite@5.2.6
       vue: 3.5.22(typescript@5.9.3)
     dev: true
-
-  registry.npmmirror.com/@vue/devtools-api@6.6.1:
-    resolution: {integrity: sha512-LgPscpE3Vs0x96PzSSB4IGVSZXZBZHpfxs+ZA1d+VEPwHdOXowy/Y2CsvCAIFrf+ssVU1pD1jidj505EpUnfbA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-6.6.1.tgz}
-    name: '@vue/devtools-api'
-    version: 6.6.1
-    dev: false
 
   registry.npmmirror.com/async-validator@4.2.5:
     resolution: {integrity: sha512-7HhHjtERjqlNbZtqNqy2rckN/SpOOlmDliet+lP7k+eKZEjPk3DgyeU9lIXLdeLz0uBbbVp+9Qdow9wJWgwwfg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/async-validator/-/async-validator-4.2.5.tgz}
@@ -927,18 +934,6 @@ packages:
       vue: ^3.0.0
     dependencies:
       evtd: registry.npmmirror.com/evtd@0.2.4
-      vue: 3.5.22(typescript@5.9.3)
-    dev: false
-
-  registry.npmmirror.com/vue-router@4.3.0(vue@3.5.22):
-    resolution: {integrity: sha512-dqUcs8tUeG+ssgWhcPbjHvazML16Oga5w34uCUmsk7i0BcnskoLGwjpa15fqMr2Fa5JgVBrdL2MEgqz6XZ/6IQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-router/-/vue-router-4.3.0.tgz}
-    id: registry.npmmirror.com/vue-router/4.3.0
-    name: vue-router
-    version: 4.3.0
-    peerDependencies:
-      vue: ^3.2.0
-    dependencies:
-      '@vue/devtools-api': registry.npmmirror.com/@vue/devtools-api@6.6.1
       vue: 3.5.22(typescript@5.9.3)
     dev: false
 
