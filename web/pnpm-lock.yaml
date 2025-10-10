@@ -20,8 +20,8 @@ dependencies:
 
 devDependencies:
   '@vitejs/plugin-vue':
-    specifier: ^5.0.4
-    version: registry.npmmirror.com/@vitejs/plugin-vue@5.0.4(vite@5.2.6)(vue@3.5.22)
+    specifier: ^6.0.1
+    version: 6.0.1(vite@5.2.6)(vue@3.5.22)
   typescript:
     specifier: ^5.9.3
     version: 5.9.3
@@ -266,6 +266,10 @@ packages:
   /@jridgewell/sourcemap-codec@1.5.5:
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
 
+  /@rolldown/pluginutils@1.0.0-beta.29:
+    resolution: {integrity: sha512-NIJgOsMjbxAXvoGq/X0gD7VPMQ8j9g0BiDaNjVNVjvl+iKXxL3Jre0v31RmBYeLEmkbj2s02v8vFTbUXi5XS2Q==}
+    dev: true
+
   /@rollup/rollup-android-arm-eabi@4.13.0:
     resolution: {integrity: sha512-5ZYPOuaAqEH/W3gYsRkxQATBW3Ii1MfaT4EQstTnLKViLi2gLSQmlmtTpGucNP3sXEpOiI5tdGhjdE111ekyEg==}
     cpu: [arm]
@@ -369,6 +373,18 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@vitejs/plugin-vue@6.0.1(vite@5.2.6)(vue@3.5.22):
+    resolution: {integrity: sha512-+MaE752hU0wfPFJEUAIxqw18+20euHHdxVtMvbFcOEpjEyfqXH/5DCoTHiVJ0J29EhTJdoTkjEv5YBKU9dnoTw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    peerDependencies:
+      vite: ^5.0.0 || ^6.0.0 || ^7.0.0
+      vue: ^3.2.25
+    dependencies:
+      '@rolldown/pluginutils': 1.0.0-beta.29
+      vite: registry.npmmirror.com/vite@5.2.6
+      vue: 3.5.22(typescript@5.9.3)
+    dev: true
 
   /@volar/language-core@2.4.23:
     resolution: {integrity: sha512-hEEd5ET/oSmBC6pi1j6NaNYRWoAiDhINbT8rmwtINugR39loROSlufGdYMF9TaKGfz+ViGs1Idi3mAhnuPcoGQ==}
@@ -651,20 +667,6 @@ packages:
     name: '@types/lodash'
     version: 4.17.0
     dev: false
-
-  registry.npmmirror.com/@vitejs/plugin-vue@5.0.4(vite@5.2.6)(vue@3.5.22):
-    resolution: {integrity: sha512-WS3hevEszI6CEVEx28F8RjTX97k3KsrcY6kvTg7+Whm5y3oYvcqzVeGCU3hxSAn4uY2CLCkeokkGKpoctccilQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vitejs/plugin-vue/-/plugin-vue-5.0.4.tgz}
-    id: registry.npmmirror.com/@vitejs/plugin-vue/5.0.4
-    name: '@vitejs/plugin-vue'
-    version: 5.0.4
-    engines: {node: ^18.0.0 || >=20.0.0}
-    peerDependencies:
-      vite: ^5.0.0
-      vue: ^3.2.25
-    dependencies:
-      vite: registry.npmmirror.com/vite@5.2.6
-      vue: 3.5.22(typescript@5.9.3)
-    dev: true
 
   registry.npmmirror.com/async-validator@4.2.5:
     resolution: {integrity: sha512-7HhHjtERjqlNbZtqNqy2rckN/SpOOlmDliet+lP7k+eKZEjPk3DgyeU9lIXLdeLz0uBbbVp+9Qdow9wJWgwwfg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/async-validator/-/async-validator-4.2.5.tgz}
