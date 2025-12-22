@@ -1,50 +1,42 @@
-name: Check Data
+# https://github.com/cpeditor/cpeditor/blob/master/.github/workflows/check_format.yml
 
-permissions:
-  contents: write
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+name: check data
+on: [push, pull_request]
 
 jobs:
-  check-data:
+  build:
+    name: check data
     runs-on: ubuntu-latest
-    env:
-      LC_ALL: "C.UTF-8"
-      LANG: "C.UTF-8"
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-        persist-credentials: true
+      - name: Checkout main
+        uses: actions/checkout@v5
 
-    - name: Run data check
-      run: |
-        echo "Run your data check commands here"
+      - uses: extractions/setup-just@v3
 
-    - name: Commit and push changes if any
-      run: |
-        git config --global user.name 'GitHub Action'
-        git config --global user.email 'action@github.com'
-        git status --porcelain
-        if ! git diff --quiet; then
-          git add .
-          git commit -m 'Fix check-data workflow: auto-commit, push and PR creation for changed files.'
-          git push origin HEAD:auto-fix-check-data-2025-12-22
-        fi
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v6
+        with:
+          python-version: 3.9
 
-    - name: Create Pull Request
-      if: success()
-      uses: peter-evans/create-pull-request@v7
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        base: main
-        branch: auto-fix-check-data-2025-12-22
-        commit-message: 'Fix check-data workflow: auto-commit, push and PR creation for changed files.'
-        title: 'Fix check-data workflow'
-        body: 'This PR was created automatically to update the check-data workflow.'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
+      - name: Build Data(JSON)
+        run: |
+          pip install pyyaml
+          just generate
+
+      - name: Check diff
+        run: git diff --exit-code HEAD
+
+      - name: Create Pull Request
+        if: failure()
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "style: format codes"
+          title: "style: format codes for ${{ github.actor }} on ${{ github.ref }}"
+          labels: "style"
+          assignees: "${{ github.actor }}"
+          reviewers: "${{ github.actor }}"
+          branch: "auto-pr/check-data/${{ github.ref }}"
