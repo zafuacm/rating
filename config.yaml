@@ -122,6 +122,10 @@
       date: "2025-12-21"
       file: "2025-12-21.txt"
       url: "https://codeforces.com/contestInvitation/692bbda67403e542a95f0430eec10fdacb652164"
+    - name: "2025.12.28 周赛"
+      date: "2025-12-28"
+      file: "2025-12-28.txt"
+      url: "https://codeforces.com/contestInvitation/918a52c9cc1af9a1c23e484eba14a63874f6928f"
 - list: "2024 赛季"
   init: '0000-00-00.txt'
   file: "2024-all.json"
