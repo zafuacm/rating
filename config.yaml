@@ -1,3 +1,12 @@
+- list: "2026 赛季"
+  init: '0000-00-00.txt'
+  file: "2026-all.json"
+  contests: 
+    - name: "ZAFU2026寒假个人赛1"
+      date: "2026-01-27"
+      file: "2026-01-27.txt"
+      url: "https://codeforces.com/contestInvitation/d03308003dbc0462c476de31f3d41aaa8b3d1a85"
+      
 - list: "2025 赛季"
   init: '0000-00-00.txt'
   file: "2025-all.json"
