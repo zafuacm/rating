@@ -10,10 +10,6 @@
       date: "2026-01-29"
       file: "2026-01-29.txt"
       url: "https://codeforces.com/contestInvitation/52d25afee8726ba6e692d01def4c77ff2424747b"
-    - name: "ZAFU2026寒假个人赛3"
-      date: "2026-01-31"
-      file: "2026-01-31.txt"
-      url: "https://codeforces.com/contestInvitation/37ed8cc4a70af54f1f91ac357a59089af7911bd2"
 - list: "2025 赛季"
   init: '0000-00-00.txt'
   file: "2025-all.json"
