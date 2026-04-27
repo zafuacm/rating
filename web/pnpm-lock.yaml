@@ -13,7 +13,7 @@ dependencies:
     version: registry.npmmirror.com/vfonts@0.0.3
   vue:
     specifier: ^3.5.32
-    version: 3.5.32(typescript@5.9.3)
+    version: 3.5.32(typescript@6.0.3)
   vue-router:
     specifier: ^5.0.4
     version: 5.0.4(vue@3.5.32)
@@ -23,14 +23,14 @@ devDependencies:
     specifier: ^6.0.5
     version: 6.0.5(vite@8.0.9)(vue@3.5.32)
   typescript:
-    specifier: ^5.9.3
-    version: 5.9.3
+    specifier: ^6.0.3
+    version: 6.0.3
   vite:
     specifier: ^8.0.9
     version: 8.0.9
   vue-tsc:
     specifier: ^3.2.7
-    version: 3.2.7(typescript@5.9.3)
+    version: 3.2.7(typescript@6.0.3)
 
 packages:
 
@@ -80,7 +80,7 @@ packages:
     peerDependencies:
       vue: ^3.0.11
     dependencies:
-      vue: 3.5.32(typescript@5.9.3)
+      vue: 3.5.32(typescript@6.0.3)
     dev: false
 
   /@emnapi/core@1.9.2:
@@ -335,7 +335,7 @@ packages:
     dependencies:
       '@rolldown/pluginutils': 1.0.0-rc.2
       vite: 8.0.9
-      vue: 3.5.32(typescript@5.9.3)
+      vue: 3.5.32(typescript@6.0.3)
     dev: true
 
   /@volar/language-core@2.4.28:
@@ -370,7 +370,7 @@ packages:
       local-pkg: 1.1.2
       magic-string-ast: 1.0.3
       unplugin-utils: 0.3.1
-      vue: 3.5.32(typescript@5.9.3)
+      vue: 3.5.32(typescript@6.0.3)
     dev: false
 
   /@vue/compiler-core@3.5.32:
@@ -464,7 +464,7 @@ packages:
     dependencies:
       '@vue/compiler-ssr': 3.5.32
       '@vue/shared': 3.5.32
-      vue: 3.5.32(typescript@5.9.3)
+      vue: 3.5.32(typescript@6.0.3)
 
   /@vue/shared@3.5.32:
     resolution: {integrity: sha512-ksNyrmRQzWJJ8n3cRDuSF7zNNontuJg1YHnmWRJd2AMu8Ij2bqwiiri2lH5rHtYPZjj4STkNcgcmiQqlOjiYGg==}
@@ -786,7 +786,7 @@ packages:
       treemate: 0.3.11
       vdirs: 0.1.8(vue@3.5.32)
       vooks: 0.2.12(vue@3.5.32)
-      vue: 3.5.32(typescript@5.9.3)
+      vue: 3.5.32(typescript@6.0.3)
       vueuc: 0.4.65(vue@3.5.32)
     dev: false
 
@@ -915,8 +915,8 @@ packages:
     dev: true
     optional: true
 
-  /typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+  /typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -947,7 +947,7 @@ packages:
       vue: ^3.0.11
     dependencies:
       evtd: 0.2.4
-      vue: 3.5.32(typescript@5.9.3)
+      vue: 3.5.32(typescript@6.0.3)
     dev: false
 
   /vite@8.0.9:
@@ -1008,7 +1008,7 @@ packages:
       vue: ^3.0.0
     dependencies:
       evtd: 0.2.4
-      vue: 3.5.32(typescript@5.9.3)
+      vue: 3.5.32(typescript@6.0.3)
     dev: false
 
   /vscode-uri@3.1.0:
@@ -1046,11 +1046,11 @@ packages:
       tinyglobby: 0.2.15
       unplugin: 3.0.0
       unplugin-utils: 0.3.1
-      vue: 3.5.32(typescript@5.9.3)
+      vue: 3.5.32(typescript@6.0.3)
       yaml: 2.8.3
     dev: false
 
-  /vue-tsc@3.2.7(typescript@5.9.3):
+  /vue-tsc@3.2.7(typescript@6.0.3):
     resolution: {integrity: sha512-zc1tL3HoQni1zGTGrwBVRQb7rGP5SWdu/m4rGB6JcnAC5MT5LFZIxF7Y+EJEnt4hGF23d60rXH7gRjHGb5KQQQ==}
     hasBin: true
     peerDependencies:
@@ -1058,10 +1058,10 @@ packages:
     dependencies:
       '@volar/typescript': 2.4.28
       '@vue/language-core': 3.2.7
-      typescript: 5.9.3
+      typescript: 6.0.3
     dev: true
 
-  /vue@3.5.32(typescript@5.9.3):
+  /vue@3.5.32(typescript@6.0.3):
     resolution: {integrity: sha512-vM4z4Q9tTafVfMAK7IVzmxg34rSzTFMyIe0UUEijUCkn9+23lj0WRfA83dg7eQZIUlgOSGrkViIaCfqSAUXsMw==}
     peerDependencies:
       typescript: '*'
@@ -1074,7 +1074,7 @@ packages:
       '@vue/runtime-dom': 3.5.32
       '@vue/server-renderer': 3.5.32(vue@3.5.32)
       '@vue/shared': 3.5.32
-      typescript: 5.9.3
+      typescript: 6.0.3
 
   /vueuc@0.4.65(vue@3.5.32):
     resolution: {integrity: sha512-lXuMl+8gsBmruudfxnMF9HW4be8rFziylXFu1VHVNbLVhRTXXV4njvpRuJapD/8q+oFEMSfQMH16E/85VoWRyQ==}
@@ -1088,7 +1088,7 @@ packages:
       seemly: 0.3.10
       vdirs: 0.1.8(vue@3.5.32)
       vooks: 0.2.12(vue@3.5.32)
-      vue: 3.5.32(typescript@5.9.3)
+      vue: 3.5.32(typescript@6.0.3)
     dev: false
 
   /webpack-virtual-modules@0.6.2:
