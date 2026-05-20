@@ -20,8 +20,8 @@ dependencies:
 
 devDependencies:
   '@vitejs/plugin-vue':
-    specifier: ^6.0.5
-    version: 6.0.5(vite@8.0.9)(vue@3.5.34)
+    specifier: ^6.0.7
+    version: 6.0.7(vite@8.0.9)(vue@3.5.34)
   typescript:
     specifier: ^6.0.3
     version: 6.0.3
@@ -304,8 +304,8 @@ packages:
     resolution: {integrity: sha512-45+YtqxLYKDWQouLKCrpIZhke+nXxhsw+qAHVzHDVwttyBlHNBVs2K25rDXrZzhpTp9w1FlAlvweV1H++fdZoA==}
     dev: true
 
-  /@rolldown/pluginutils@1.0.0-rc.2:
-    resolution: {integrity: sha512-izyXV/v+cHiRfozX62W9htOAvwMo4/bXKDrQ+vom1L1qRuexPock/7VZDAhnpHCLNejd3NJ6hiab+tO0D44Rgw==}
+  /@rolldown/pluginutils@1.0.1:
+    resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
     dev: true
 
   /@tybys/wasm-util@0.10.2:
@@ -326,14 +326,14 @@ packages:
     resolution: {integrity: sha512-gIW7lQLZbue7lRSWEFql49QJJWThrTFFeIMJdp3eH4tKoxm1OvEPg02rm4wCCSHS0cL3/Fizimb35b7k8atwsQ==}
     dev: false
 
-  /@vitejs/plugin-vue@6.0.5(vite@8.0.9)(vue@3.5.34):
-    resolution: {integrity: sha512-bL3AxKuQySfk1iGcBsQnoRVexTPJq0Z/ixFVM8OhVJAP6ZXXXLtM7NFKWhLl30Kg7uTBqIaPXbh+nuQCuBDedg==}
+  /@vitejs/plugin-vue@6.0.7(vite@8.0.9)(vue@3.5.34):
+    resolution: {integrity: sha512-km+p+XdSz9Sxm5rqUbqcSfZYaAniKxWBj1KURl+Jr7UaPvvX7BmaWMdP69I5rrFDeQGyxAG7NXdc57vz+snhWg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
       vue: ^3.2.25
     dependencies:
-      '@rolldown/pluginutils': 1.0.0-rc.2
+      '@rolldown/pluginutils': 1.0.1
       vite: 8.0.9
       vue: 3.5.34(typescript@6.0.3)
     dev: true
