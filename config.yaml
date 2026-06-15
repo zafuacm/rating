@@ -62,6 +62,10 @@
       date: "2026-06-07"
       file: "2026-06-07.txt"
       url: "https://codeforces.com/contestInvitation/64a9363e2316b5c6cf8cf0069ace7c60c9772c43"
+    - name: "2026.06.14 周赛"
+      date: "2026-06-14"
+      file: "2026-06-14.txt"
+      url: "https://codeforces.com/contestInvitation/590cbdd50add4c0843f3afdf9723cc379e44876e"
 - list: "2025 赛季"
   init: '0000-00-00.txt'
   file: "2025-all.json"
